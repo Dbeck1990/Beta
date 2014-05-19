@@ -24,6 +24,7 @@
 		18DC581E192A812A00806DFD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DC57F9192A812A00806DFD /* UIKit.framework */; };
 		18DC5826192A812A00806DFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18DC5824192A812A00806DFD /* InfoPlist.strings */; };
 		18DC5828192A812A00806DFD /* GAMETests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC5827192A812A00806DFD /* GAMETests.m */; };
+		18DC5836192A875D00806DFD /* Wooo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC5835192A875D00806DFD /* Wooo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		18DC5823192A812A00806DFD /* GAMETests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GAMETests-Info.plist"; sourceTree = "<group>"; };
 		18DC5825192A812A00806DFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18DC5827192A812A00806DFD /* GAMETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAMETests.m; sourceTree = "<group>"; };
+		18DC5834192A875D00806DFD /* Wooo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wooo.h; path = ../Wooo.h; sourceTree = "<group>"; };
+		18DC5835192A875D00806DFD /* Wooo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Wooo.m; path = ../Wooo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 		18DC57FD192A812A00806DFD /* GAME */ = {
 			isa = PBXGroup;
 			children = (
+				18DC5834192A875D00806DFD /* Wooo.h */,
+				18DC5835192A875D00806DFD /* Wooo.m */,
 				18DC5806192A812A00806DFD /* AppDelegate.h */,
 				18DC5807192A812A00806DFD /* AppDelegate.m */,
 				18DC5809192A812A00806DFD /* Main.storyboard */,
@@ -262,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DC5836192A875D00806DFD /* Wooo.m in Sources */,
 				18DC5811192A812A00806DFD /* MyScene.m in Sources */,
 				18DC580E192A812A00806DFD /* ViewController.m in Sources */,
 				18DC5808192A812A00806DFD /* AppDelegate.m in Sources */,

@@ -7,23 +7,30 @@
 //
 
 #import "MyScene.h"
+#import "Wooo.h"
 
-@implementation MyScene
+@implementation MyScene{
+    Wooo *thePlayer;
+}
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
+        _screenHeight = self.frame.size.height;
+        _screenWidth = self.frame.size.width;
+
+        
+        thePlayer = [[Wooo alloc] init];
+        thePlayer.position = CGPointMake(_screenWidth/2, 50);
+        [self addChild:thePlayer];
+        
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    
         
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
+        NSLog(@"the screen width is %f andf the screen height is %f", _screenHeight, _screenWidth);
         
-        [self addChild:myLabel];
     }
     return self;
 }
@@ -34,15 +41,29 @@
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
         
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+        NSLog(@"screen touched at %f, %f", location.x,location.y);
         
-        sprite.position = location;
+        if(location.x< _screenWidth/2-40) {
+            //left hand side touched
+            NSLog(@"left");
+            thePlayer.position = CGPointMake( thePlayer.position.x-20, thePlayer.position.y);
+        } else if (location.x> _screenWidth/2+40) {
+            NSLog(@"right");
+            thePlayer.position = CGPointMake( thePlayer.position.x+20, thePlayer.position.y);
+            //right hand side touched
+        }else{
+            NSLog(@"fire");
+        }
+    
+        //SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
         
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
+       // sprite.position = location;
         
-        [sprite runAction:[SKAction repeatActionForever:action]];
+       // SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
         
-        [self addChild:sprite];
+       // [sprite runAction:[SKAction repeatActionForever:action]];
+        
+        //[self addChild:sprite];
     }
 }
 
